@@ -5,19 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emmanuele Battista</title>
     <style>
+        :root {
+            --primary: #0056b3;
+            --text: #222;
+            --bg-subtle: #f8f9fa;
+            --border: #e9ecef;
+        }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 0 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px 20px;
             line-height: 1.6;
+            color: var(--text);
+        }
+        header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2.4rem;
+            margin: 0 0 10px 0;
+            color: #111;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin: 0;
+        }
+        nav {
+            margin-top: 15px;
+        }
+        nav a {
+            margin-right: 15px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
             color: #333;
         }
-        h1 { font-size: 2.2rem; }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .pub-title {
+            font-weight: bold;
+        }
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: #777;
+        }
     </style>
 </head>
 <body>
-    <h1>Emmanuele Battista</h1>
-    <p>Benvenuto sulla mia pagina personale.</p>
+
+    <header>
+        <h1>Emmanuele Battista</h1>
+        <p class="subtitle">Ricercatore in Fisica Teorica</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#research">Ricerca</a>
+            <a href="#publications">Pubblicazioni</a>
+            <a href="#contact">Contatti</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>Informazioni</h2>
+        <p>Benvenuto nella mia pagina personale. Mi occupo di fisica teorica e modelli di gravità.</p>
+    </section>
+
+    <section id="research">
+        <h2>Interessi di Ricerca</h2>
+        <ul>
+            <li>Gravità metric-affine e geometrica</li>
+            <li>Invarianza proiettiva e forme di torsione</li>
+            <li>Fisica gravitazionale teorica</li>
+        </ul>
+    </section>
+
+    <section id="publications">
+        <h2>Pubblicazioni Selezionate</h2>
+        <ul>
+            <li>
+                <span class="pub-title">Titolo dell'articolo di ricerca</span><br>
+                <em>Rivista o arXiv ID</em> (Anno).
+            </li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contatti</h2>
+        <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
+        <p>Profilo <a href="https://inspirehep.net" target="_blank">INSPIRE-HEP</a> | <a href="https://arxiv.org" target="_blank">arXiv</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; Emmanuele Battista. Ospitato su GitHub Pages.</p>
+    </footer>
+
 </body>
 </html>
