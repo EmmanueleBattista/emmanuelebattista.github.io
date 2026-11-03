@@ -1,105 +1,289 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Emmanuele Battista</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emmanuele Battista - Theoretical Physics</title>
   <style>
-    body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 40px auto; max-width: 800px; line-height: 1.6; color: #1a1a1a; padding: 0 20px; }
-    .header-container { display: flex; align-items: center; gap: 20px; margin-bottom: 10px; }
-    .profile-img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 1px solid #ccc; }
-    h1 { font-size: 28px; color: #0e0e0e; margin: 0; }
-    p.subtitle { color: #535353; font-size: 14px; margin: 5px 0 0 0; }
-    .nav-links { margin: 15px 0 25px 0; font-size: 13px; }
-    .nav-links a { color: #0640a4; text-decoration: none; margin-right: 15px; font-weight: 500; }
-    .nav-links a:hover { text-decoration: underline; }
-    h2 { font-size: 18px; color: #262626; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-top: 25px; }
-    ul { list-style-type: disc; padding-left: 20px; }
-    li { margin-bottom: 8px; }
-    ul.pub-list { list-style-type: none; padding-left: 0; }
-    ul.pub-list li { margin-bottom: 16px; padding-left: 12px; border-left: 3px solid #0640a4; }
-    .pub-title { font-weight: bold; color: #111; }
-    .pub-authors { font-size: 14px; color: #444; }
-    .pub-journal { font-style: italic; font-size: 14px; color: #555; }
-    .pub-links { font-size: 13px; margin-top: 2px; }
-    a { color: #0000e9; text-decoration: underline; }
-    .footer { font-size: 11px; color: #646464; margin-top: 40px; }
-    .orcid-icon { width: 1em; vertical-align: middle; margin-right: 4px; }
-    .inspire-banner { background-color: #f8f9fa; border: 1px solid #e9ecef; padding: 10px 15px; border-radius: 6px; margin-bottom: 20px; font-size: 14px; }
+    :root {
+      --primary-color: #0f4c81;
+      --secondary-color: #165b96;
+      --bg-color: #f7f9fa;
+      --card-bg: #ffffff;
+      --text-main: #2b2b2b;
+      --text-muted: #5c6b73;
+      --border-color: #e1e8ed;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.7;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    /* Header Profile Section */
+    .profile-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      border: 1px solid var(--border-color);
+      margin-bottom: 20px;
+    }
+
+    .profile-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary-color);
+    }
+
+    .profile-info h1 {
+      margin: 0 0 4px 0;
+      font-size: 28px;
+      color: #111;
+      letter-spacing: -0.3px;
+    }
+
+    .profile-info .title {
+      font-size: 15px;
+      color: var(--primary-color);
+      font-weight: 600;
+      margin: 0 0 6px 0;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 12px 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      border: 1px solid var(--border-color);
+    }
+
+    nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      margin-right: 25px;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+    }
+
+    /* Main Content Sections */
+    section {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      border: 1px solid var(--border-color);
+    }
+
+    h2 {
+      font-size: 20px;
+      color: var(--primary-color);
+      margin-top: 0;
+      margin-bottom: 18px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #eef2f7;
+    }
+
+    /* Research Interests List */
+    ul.research-list {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    ul.research-list li {
+      margin-bottom: 8px;
+    }
+
+    /* Publications List */
+    .inspire-banner {
+      background-color: #eef5fc;
+      border-left: 4px solid var(--primary-color);
+      padding: 12px 16px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    ul.pub-list {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    ul.pub-list li {
+      margin-bottom: 20px;
+      padding-left: 14px;
+      border-left: 3px solid var(--primary-color);
+    }
+
+    .pub-title {
+      font-weight: 700;
+      font-size: 16px;
+      color: #1a1a1a;
+      margin-bottom: 2px;
+    }
+
+    .pub-authors {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .pub-journal {
+      font-size: 14px;
+      font-style: italic;
+      color: #4a5568;
+      margin-bottom: 6px;
+    }
+
+    /* Badge Links */
+    .badge-link {
+      display: inline-block;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary-color);
+      background-color: #eef5fc;
+      border-radius: 4px;
+      text-decoration: none;
+      margin-right: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .badge-link:hover {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .orcid-icon {
+      width: 1em;
+      vertical-align: middle;
+      margin-right: 4px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
 
-  <div class="header-container">
-    <img src="mypic.jpg" alt="Emmanuele Battista" class="profile-img">
-    <div>
-      <h1>Emmanuele Battista</h1>
-      <p class="subtitle">Researcher in Theoretical Physics</p>
+  <div class="container">
+
+    <!-- Profile Header -->
+    <div class="profile-card">
+      <img src="mypic.jpg" alt="Emmanuele Battista" class="profile-img">
+      <div class="profile-info">
+        <h1>Emmanuele Battista</h1>
+        <div class="title">Researcher in Theoretical Physics</div>
+      </div>
     </div>
-  </div>
 
-  <div class="nav-links">
-    <a href="#About">About</a>
-    <a href="#Research">Research</a>
-    <a href="#Publications">Publications</a>
-    <a href="#Contacts">Contacts</a>
-  </div>
+    <!-- Navigation Bar -->
+    <nav>
+      <a href="#About">About</a>
+      <a href="#Research">Research</a>
+      <a href="#Publications">Publications</a>
+      <a href="#Contacts">Contacts</a>
+    </nav>
 
-  <h2 id="About">About</h2>
-  <p>Welcome to my personal webpage. I am a theoretical physicist and I work in the field of classical and quantum gravity. At the moment, I am also working to improve this page!</p>
+    <!-- About Section -->
+    <section id="About">
+      <h2>About</h2>
+      <p>Welcome to my personal webpage. I am a theoretical physicist and I work in the field of classical and quantum gravity. At the moment, I am also working to improve this page!</p>
+    </section>
 
-  <h2 id="Research">Research interests</h2>
-  <ul>
-    <li>General Relativity; Einstein-Cartan Theory; Metric-Affine Gravity</li>
-    <li>Gravitational Waves</li>
-    <li>Low-Energy Quantum Gravity</li>
-  </ul>
+    <!-- Research Section -->
+    <section id="Research">
+      <h2>Research interests</h2>
+      <ul class="research-list">
+        <li>General Relativity; Einstein-Cartan Theory; Metric-Affine Gravity</li>
+        <li>Gravitational Waves</li>
+        <li>Low-Energy Quantum Gravity</li>
+      </ul>
+    </section>
 
-  <h2 id="Publications">Selected Publications</h2>
-  
-  <div class="inspire-banner">
-    For a complete list of publications, please visit my 
-    <a href="https://inspirehep.net/authors/1317817?ui-citation-summary=true" target="_blank"><b>INSPIRE Profile</b></a>.
-  </div>
+    <!-- Publications Section -->
+    <section id="Publications">
+      <h2>Selected Publications</h2>
 
-  <ul class="pub-list">
-<!-- Prima pubblicazione -->
-    <li>
-      <div class="pub-title">Rotating Weyssenhoff fluids in linearized Einstein-Cartan theory</div>
-      <div class="pub-authors"><b>E. Battista</b>, S. Capozziello, F. Giovinetti</div>
-      <div class="pub-journal">Phys. Rev. D 114 (2026) 8, 084044</div>
-      <div class="pub-links">
-        [<a href="https://arxiv.org/abs/2609.30545">arXiv</a>] 
-        [<a href="https://inspirehep.net/literature/3207953">INSPIRE</a>]
+      <div class="inspire-banner">
+        For a complete list of publications, citations, and preprints, please visit my 
+        <a href="https://inspirehep.net/authors/1317817?ui-citation-summary=true" target="_blank"><b>INSPIRE Profile</b></a>.
       </div>
-    </li>
 
-<!-- SECONDA PUBBLICAZIONE (Copia e incolla questo blocco per ogni nuovo articolo) -->
-    <li>
-      <div class="pub-title">Title</div>
-      <div class="pub-authors"><b>E. Battista</b>, Co-author</div>
-      <div class="pub-journal">Journal</div>
-      <div class="pub-links">
-        [<a href="https://arxiv.org/abs/..." target="_blank">arXiv</a>] 
-        [<a href="https://inspirehep.net/literature/..." target="_blank">INSPIRE</a>]
-      </div>
-    </li>
+      <ul class="pub-list">
+        <li>
+          <div class="pub-title">Rotating Weyssenhoff fluids in linearized Einstein-Cartan theory</div>
+          <div class="pub-authors"><b>E. Battista</b>, S. Capozziello, F. Giovinetti</div>
+          <div class="pub-journal">Phys. Rev. D 114 (2026) 8, 084044</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2609.30545" target="_blank" class="badge-link">arXiv</a>
+            <a href="https://inspirehep.net/literature/3207953" target="_blank" class="badge-link">INSPIRE</a>
+          </div>
+        </li>
+      </ul>
+    </section>
 
-  </ul>
+    <!-- Contacts Section -->
+    <section id="Contacts">
+      <h2>Contacts</h2>
+      <p><b>Email:</b><br>
+        <a href="mailto:emmanuele.battista@lnf.infn.it">emmanuele.battista@lnf.infn.it</a>, 
+        <a href="mailto:emmanuele.battista@unina.it">emmanuele.battista@unina.it</a>, 
+        <a href="mailto:emmanuelebattista@gmail.com">emmanuelebattista@gmail.com</a>
+      </p>
+      <p><b>Profiles:</b><br>
+        <a href="https://inspirehep.net/authors/1317817?ui-citation-summary=true" target="_blank">INSPIRE-HEP</a> | 
+        <a id="cy-effective-orcid-url" href="https://orcid.org/0000-0001-5361-7109" target="_blank" rel="me noopener noreferrer">
+          <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" class="orcid-icon" alt="ORCID iD icon"/>
+          ORCID
+        </a>
+      </p>
+    </section>
 
-  <h2 id="Contacts">Contacts</h2>
-  <p>Email: 
-    <a href="mailto:emmanuele.battista@lnf.infn.it">emmanuele.battista@lnf.infn.it</a>, 
-    <a href="mailto:emmanuele.battista@unina.it">emmanuele.battista@unina.it</a>, 
-    <a href="mailto:emmanuelebattista@gmail.com">emmanuelebattista@gmail.com</a>
-  </p>
-  <p>Profilo <a href="https://inspirehep.net/authors/1317817?ui-citation-summary=true" target="_blank">INSPIRE</a> | 
-    <a id="cy-effective-orcid-url" href="https://orcid.org/0000-0001-5361-7109" target="_blank" rel="me noopener noreferrer">
-      <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" class="orcid-icon" alt="ORCID iD icon"/>
-      ORCID
-    </a>
-  </p>
+    <footer>
+      © Emmanuele Battista
+    </footer>
 
-  <p class="footer">© Emmanuele Battista</p>
+  </div>
 
 </body>
 </html>
+
